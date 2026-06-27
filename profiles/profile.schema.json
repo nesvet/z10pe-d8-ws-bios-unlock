@@ -1,0 +1,63 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://github.com/nesvet/z10pe-d8-ws-bios-unlock/profile.schema.json",
+	"title": "BIOS unlock profile",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"id",
+		"board",
+		"biosVersion",
+		"flashbackCapName",
+		"stockBiosSha256",
+		"stockSetupdataSha256",
+		"patchedSetupdataSha256",
+		"amitse",
+		"setupdata",
+		"patches"
+	],
+	"properties": {
+		"$schema": { "type": "string" },
+		"id": { "type": "string", "minLength": 1 },
+		"board": { "type": "string", "minLength": 1 },
+		"biosVersion": { "type": "string", "minLength": 1 },
+		"flashbackCapName": { "type": "string", "pattern": "^[A-Z0-9._-]+\\.CAP$" },
+		"stockBiosSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+		"stockSetupdataSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+		"patchedSetupdataSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+		"amitse": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["bodyOffset", "compressedSize"],
+			"properties": {
+				"bodyOffset": { "type": "integer", "minimum": 0 },
+				"compressedSize": { "type": "integer", "minimum": 1 }
+			}
+		},
+		"setupdata": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["offsetInDecompressed", "size"],
+			"properties": {
+				"offsetInDecompressed": { "type": "integer", "minimum": 0 },
+				"size": { "type": "integer", "minimum": 1 }
+			}
+		},
+		"patches": {
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"required": ["offset", "from", "to", "menu", "label"],
+				"properties": {
+					"offset": { "type": "integer", "minimum": 0 },
+					"from": { "type": "integer", "minimum": 0, "maximum": 255 },
+					"to": { "type": "integer", "minimum": 0, "maximum": 255 },
+					"menu": { "type": "string", "minLength": 1 },
+					"label": { "type": "string", "minLength": 1 }
+				}
+			}
+		}
+	}
+}

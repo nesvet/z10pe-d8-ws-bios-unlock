@@ -1,0 +1,41 @@
+name: Profile request
+description: New board or BIOS version
+title: "[Profile]: "
+labels: ["profile-wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request a new profile JSON. Do **not** attach firmware — provide SHA256 hashes only.
+  - type: input
+    id: board
+    attributes:
+      label: Board
+      placeholder: ASUS Z10PE-D8 WS
+    validations:
+      required: true
+  - type: input
+    id: bios
+    attributes:
+      label: BIOS version
+      placeholder: "4101"
+    validations:
+      required: true
+  - type: input
+    id: stock-sha
+    attributes:
+      label: Stock BIOS body SHA256
+      description: SHA256 of decapped body (after 2048-byte CAP header), not the .CAP file
+  - type: dropdown
+    id: amibcp
+    attributes:
+      label: AMIBCP reference available?
+      options:
+        - "No"
+        - "Yes — can provide setupdata SHA256 only"
+        - "Yes — verified offsets documented"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Offsets, forum links, why this profile is needed

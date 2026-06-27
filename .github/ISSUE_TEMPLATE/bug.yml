@@ -1,0 +1,38 @@
+name: Bug report
+description: Build, verify, or flash failure
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Run `npx --yes github:nesvet/z10pe-d8-ws-bios-unlock doctor /path/to/stock.cap` and paste the full output below.
+        Do **not** attach `.CAP` or `.bin` files.
+  - type: textarea
+    id: doctor
+    attributes:
+      label: doctor / verify --verbose output
+      description: Required — paste full terminal output
+    validations:
+      required: true
+  - type: input
+    id: profile
+    attributes:
+      label: Profile id
+      description: Output of `npx --yes github:nesvet/z10pe-d8-ws-bios-unlock profiles list`
+      placeholder: z10pe-d8-ws-4301
+  - type: input
+    id: slot
+    attributes:
+      label: PCIe slot / use case
+      placeholder: e.g. quad NVMe riser in slot 5
+  - type: input
+    id: runtime
+    attributes:
+      label: Node or Bun version
+      placeholder: node -v / bun -v
+  - type: textarea
+    id: extra
+    attributes:
+      label: What happened?
+      description: Expected vs actual, POST/flash symptoms

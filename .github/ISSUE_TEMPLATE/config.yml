@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Profile requests (Discussions)
+    url: https://github.com/nesvet/z10pe-d8-ws-bios-unlock/discussions
+    about: Ask about new BIOS versions or share a verified profile contribution
+  - name: Security advisory
+    url: https://github.com/nesvet/z10pe-d8-ws-bios-unlock/security/advisories/new
+    about: Report a vulnerability privately

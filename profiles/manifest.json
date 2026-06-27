@@ -1,0 +1,12 @@
+{
+	"defaultProfileId": "z10pe-d8-ws-4301",
+	"profiles": [
+		{
+			"id": "z10pe-d8-ws-4301",
+			"file": "z10pe-d8-ws-4301.json",
+			"board": "ASUS Z10PE-D8 WS",
+			"biosVersion": "4301",
+			"flashbackCapName": "Z10PEWS.CAP"
+		}
+	]
+}

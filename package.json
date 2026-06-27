@@ -1,0 +1,58 @@
+{
+	"name": "@nesvet/z10pe-d8-ws-bios-unlock",
+	"version": "0.1.0",
+	"description": "Unlock hidden IntelRCSetup IIO menus on ASUS Z10PE-D8 WS BIOS 4301 for PCIe bifurcation without AMIBCP",
+	"type": "module",
+	"private": true,
+	"funding": {
+		"type": "patreon",
+		"url": "https://www.patreon.com/nesvet"
+	},
+	"license": "MIT",
+	"author": "Eugene Nesvetaev <dev@nesvet.dev> (https://nesvet.dev/)",
+	"homepage": "https://github.com/nesvet/z10pe-d8-ws-bios-unlock#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nesvet/z10pe-d8-ws-bios-unlock.git"
+	},
+	"bugs": {
+		"url": "https://github.com/nesvet/z10pe-d8-ws-bios-unlock/issues"
+	},
+	"keywords": [
+		"asus",
+		"z10pe-d8-ws",
+		"bios",
+		"pcie-bifurcation",
+		"pcie-riser",
+		"amibcp",
+		"intelrcsetup",
+		"xeon",
+		"workstation"
+	],
+	"engines": {
+		"node": ">=22.18",
+		"bun": ">=1.3"
+	},
+	"bin": {
+		"z10pe-unlock": "./bin/z10pe-unlock.js"
+	},
+	"scripts": {
+		"build": "node src/cli.ts build",
+		"verify": "node src/cli.ts verify",
+		"validate-profiles": "node src/validate-profiles.ts",
+		"test": "node --test --test-timeout=5000 test/**/*.test.ts",
+		"test:bun": "bun test",
+		"check": "biome check --write .",
+		"typecheck": "tsc --noEmit -p tsconfig.json"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.1",
+		"@nesvet/biome-config": "^1.0.0",
+		"@types/lzma": "2.3.0",
+		"@types/node": "^22.20.0",
+		"typescript": "^6.0.3"
+	},
+	"dependencies": {
+		"lzma": "2.3.2"
+	}
+}

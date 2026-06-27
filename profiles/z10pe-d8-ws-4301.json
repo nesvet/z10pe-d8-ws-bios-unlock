@@ -1,0 +1,34 @@
+{
+	"$schema": "./profile.schema.json",
+	"id": "z10pe-d8-ws-4301",
+	"board": "ASUS Z10PE-D8 WS",
+	"biosVersion": "4301",
+	"flashbackCapName": "Z10PEWS.CAP",
+	"stockBiosSha256": "6b4677cd066e7fd92316abc9412d3d9cae6ddc8f67ed8bcf07fa21da5a1e8f34",
+	"stockSetupdataSha256": "5f9d8d81786a1144a467dea461da42260d9b7843ab5d3f42426a3cab12b0f1f6",
+	"patchedSetupdataSha256": "2a45ccc330682766b7c7c190ef261fd0de9b9a386ec702807de81599867dabc7",
+	"amitse": {
+		"bodyOffset": 12116304,
+		"compressedSize": 198518
+	},
+	"setupdata": {
+		"offsetInDecompressed": 309848,
+		"size": 523176
+	},
+	"patches": [
+		{
+			"offset": 162976,
+			"from": 1,
+			"to": 5,
+			"menu": "IntelRCSetup → IIO Configuration",
+			"label": "IIO0 Configuration"
+		},
+		{
+			"offset": 163112,
+			"from": 1,
+			"to": 5,
+			"menu": "IntelRCSetup → IIO Configuration",
+			"label": "IIO1 Configuration"
+		}
+	]
+}
